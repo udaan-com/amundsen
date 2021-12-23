@@ -27,4 +27,5 @@ COPY ../requirements-common.txt /app/requirements-common.txt
 RUN pip3 install -e .[oidc] && \
     pip3 install -e .
 
-CMD [ "python3",  "amundsen_application/wsgi.py" ]
+#CMD [ "python3",  "amundsen_application/wsgi.py" ]
+CMD ["gunicorn", '-w', '4', '--bind', ':5000', 'amundsen_application.wsgi']

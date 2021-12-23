@@ -7,8 +7,8 @@ RUN apt-get upgrade -y
 RUN apt-get install git -y
 
 COPY ./ /app
-COPY ../requirements-dev.txt /app/requirements-dev.txt
-COPY ../requirements-common.txt /app/requirements-common.txt
+COPY requirements-dev.txt /app/requirements-dev.txt
+COPY requirements-common.txt /app/requirements-common.txt
 
 ENV FLASK_APP_MODULE_NAME flaskoidc
 ENV FLASK_APP_CLASS_NAME FlaskOIDC
